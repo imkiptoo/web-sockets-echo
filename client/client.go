@@ -43,7 +43,7 @@ func main() {
 		}
 	}()
 
-	ticker := time.NewTicker(time.Nanosecond)
+	ticker := time.NewTicker(time.Second)
 	defer ticker.Stop()
 
 	for {
@@ -68,7 +68,7 @@ func main() {
 			}
 			select {
 			case <-done:
-			case <-time.After(time.Nanosecond):
+			case <-time.After(time.Second):
 			}
 			return
 		}
